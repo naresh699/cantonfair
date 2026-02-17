@@ -19,7 +19,7 @@ export default async function Home() {
       <SourcingGrid trips={trips} />
 
       {/* Blog Section */}
-      <section className="py-24 bg-gray-50">
+      {/* <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
@@ -39,7 +39,7 @@ export default async function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       {/* Help & Resources CTA */}

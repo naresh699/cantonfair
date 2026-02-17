@@ -89,3 +89,19 @@ html body .prose p {
 .prose tr:nth-child(even) {
   background-color: #f8fafc;
 }
+
+/* Fix icon + text vertical alignment in WordPress content */
+.prose .flex.items-start {
+  align-items: center !important;
+}
+
+/* Reset heading margins inside flex icon+text blocks */
+.prose .flex.items-start h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.25em !important;
+}
+
+/* Ensure icon containers don't shrink */
+.prose .flex>div:first-child {
+  flex-shrink: 0;
+}
