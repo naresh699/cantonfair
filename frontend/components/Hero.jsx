@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero({ featuredTrip, heroData }) {
     const displayHeading = heroData?.heroHeading || featuredTrip?.title || "China Business Excellence";
@@ -49,12 +50,12 @@ export default function Hero({ featuredTrip, heroData }) {
                     transition={{ delay: 0.8 }}
                     className="flex flex-col md:flex-row gap-4 justify-center"
                 >
-                    <button className="bg-dragon-red text-white text-lg font-bold px-10 py-4 rounded-full hover:scale-105 transition-transform shadow-xl">
+                    <Link href="/trips" className="bg-dragon-red text-white text-lg font-bold px-10 py-4 rounded-full hover:scale-105 transition-transform shadow-xl inline-block">
                         View Itinerary
-                    </button>
-                    <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all">
-                        Get Consultaion
-                    </button>
+                    </Link>
+                    <Link href="/guidance" className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all inline-block">
+                        Get Consultation
+                    </Link>
                 </motion.div>
             </div>
 

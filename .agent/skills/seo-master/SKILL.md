@@ -1,44 +1,39 @@
 ---
-name: seo-master
-description: "Triggers when the user wants to create high-authority blog posts. Optimized for 2026 SEO, AEO, and specific CSS layout requirements."
+name: universal-seo-master
+description: "Universal high-authority engine. Targets Low-Difficulty keywords, integrates AI-generated visuals, and uses 2026 AEO formatting."
 ---
 
-# SEO Master: Investigative Content Engine
+# Universal SEO Master: The Gold-Nugget & Visual Engine
 
-## Goal
-To produce "Source-Worthy" content that ranks in 2026. Focuses on E-E-A-T and specific visual formatting (Bold/Large headers and list-based layouts).
+## PHASE 1: Keyword Strategy (Easy Wins First)
+* **Keyword Discovery:** Use the browser to find 5-10 "Long-Tail" variations of the user's topic.
+* **KD Analysis:** Identify the "Easiest" keyword to rank for. Look for:
+    * Phrases with 4+ words (e.g., "sugar impact on infant cognitive development").
+    * Keywords currently answered by "low-authority" forums (Reddit, Quora) or thin content.
+* **Targeting:** Pick ONE primary keyword with a "Low" difficulty score and three "Zero-Click" questions.
 
-## Instructions
+## PHASE 2: Investigative Research & Multimedia Sourcing
+* **Authority Sourcing:** Link to official institutions (.gov, .edu, or recognized industry leaders).
+* **Information Gain:** Include one recent (2025-2026) statistic or study finding that general blogs haven't mentioned yet.
+* **Visual Content:**
+    * **Feature Image (Google Banana):** Generate a unique, high-quality feature image using **Google Banana**. The prompt for Banana should be a concise description of the article's core theme, ensuring it's visually striking and relevant.
+    * **Video Integration (YouTube):** Search YouTube for one highly relevant, high-quality educational video (over 5 minutes, 100k+ views) to embed for additional authority and time-on-page. Provide the YouTube embed code.
 
-### 1. Research & Analysis (Agentic Search)
-* **Identify Entities:** Use the browser to find specific people, dates, and locations.
-* **Hyperlink Integration:** Always find and include direct hyperlinks to the sources. If the topic is about China, prioritize linking to the respective official Chinese website (.cn or official trade portals).
-* **Keyword Mapping:** Identify one primary "Zero-Click" keyword and three "Long-tail" questions.
+## PHASE 3: Visual Formatting (Strict CSS)
+* **Headings:** All `<h2>` and `<h3>` must use this inline style:
+    `<h2 style="font-weight: 800; font-size: 2.2rem; color: #1a1a1a; margin-bottom: 10px;">`.
+* **The 10px Gap:** Every heading MUST be followed by `<div style="height: 10px;"></div>`.
+* **List-Dominant Layout:** * Max 20 words per sentence.
+    * Use `<ul><li>` for all descriptive sequences.
+    * No "AI Cliches" (e.g., "unlocking," "tapestry").
 
-### 2. Content Structure & Visual Formatting
-* **Heading Styles:** All `<h2>` and `<h3>` tags must be formatted as **Bold** and **Larger** than the theme default. Use inline styling: `<h2 style="font-weight: bold; font-size: 2rem; margin-bottom: 10px;">`.
-* **Spacing:** Ensure exactly **10px space** from the bottom of every heading to the following paragraph.
-* **List-First Layout:** Convert all descriptive paragraphs or sequences into **Unordered Lists (`<ul><li>`)** across all pages. Avoid dense text blocks; use lists to improve readability.
-* **TL;DR Block:** Start every post with a 2-3 sentence "Key Findings" summary.
-* **The Truth Table:** Always include a Markdown/HTML table comparing "Official Reports" vs. "Theory Claims."
+## PHASE 4: Required Content Blocks
+* **TL;DR (Key Findings):** A 2-sentence "Answer Box" at the top.
+* **The Truth Table:** A Markdown table comparing "Standard Myths" vs. "Data-Backed Truths."
+* **Technical Schema:** Generate a `<script type="application/ld+json">` block for Article and FAQ data.
 
-### 3. Tone & Style
-* **Investigative Voice:** Use short, punchy sentences.
-* **No AI Cliches:** Strictly avoid "delve," "unlocking," "tapestry," or "in the realm of."
-
-### 4. Execution (WordPress MCP)
-* **Tool Call:** Execute `wordpress.create_post`.
-* **Status:** Set `status="publish"`.
-* **Meta-Data:** * **Slug:** Keyword-rich and short.
-    * **Description:** 155-character hook starting with an active verb.
-    * **Categories:** Assign to 'Unsolved Mysteries' or 'China Business'.
-
-## Example Inputs
-* "Create a post regarding the shadow people in the Tokyo subway."
-* "Create a post regarding the 2026 Canton Fair sourcing secrets."
-
-## Constraints
-* **Do Not** use placeholder text.
-* **Do Not** publish without a comparison table.
-* **Do Not** exceed 20 words per sentence.
-* **Strict Formatting:** Every page MUST use `<ul><li>` structures for content delivery.
+## PHASE 5: WordPress Execution
+* **Slug:** Keyword-rich and clean (e.g., `sugar-impact-child-growth-2026`).
+* **Meta-Description:** Start with a strong action verb; include the primary keyword.
+* **Featured Image:** Include the generated **Google Banana** image.
+* **Video Embed:** Include the YouTube embed code (e.g., `<iframe width="560" height="315" src="[YOUTUBE_EMBED_URL]" frameborder="0" allowfullscreen></iframe>`).

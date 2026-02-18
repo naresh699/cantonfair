@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Header({ variant = 'light', menuItems = [] }) {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,10 +44,44 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                             {item.label}
                         </Link>
                     ))}
-                    <Link href="/canton-fair" className="bg-dragon-red text-white px-6 py-2 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red">
+                    <Link href="/trips" className="bg-dragon-red text-white px-6 py-2 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red">
                         Canton Fair
                     </Link>
                 </nav>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-dragon-blue z-50 relative"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <div className="w-6 h-5 flex flex-col justify-between">
+                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
+                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                    </div>
+                </button>
+
+                {/* Mobile Menu Overlay */}
+                <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transition-all duration-300 md:hidden flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    {displayMenu.map((item, index) => (
+                        <Link
+                            key={index}
+                            href={item.uri || item.path}
+                            className="text-2xl font-bold text-dragon-blue hover:text-dragon-red transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                    <Link
+                        href="/trips"
+                        className="bg-dragon-red text-white text-xl font-bold px-8 py-3 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        Join Canton Fair
+                    </Link>
+                </div>
             </div>
         </header>
     );
