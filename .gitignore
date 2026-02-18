@@ -20,9 +20,9 @@ Thumbs.db
 # WordPress Core (too large, not needed in repo)
 app/public/wp-admin/
 app/public/wp-includes/
-app/public/wp-content/plugins/
-app/public/wp-content/themes/
-app/public/wp-content/upgrade/
+# app/public/wp-content/plugins/
+# app/public/wp-content/themes/
+# app/public/wp-content/upgrade/
 app/public/wp-content/uploads/
 app/public/wp-content/ai1wm-backups/
 app/public/wp-content/debug.log

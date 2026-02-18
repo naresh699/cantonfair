@@ -10,7 +10,7 @@
 ┌─────────────────────┐         ┌──────────────────────────┐
 │   Vercel (FREE)     │ GraphQL │   Hostinger              │
 │   Next.js Frontend  │────────▶│   WordPress Backend      │
-│   cantonfairindia.com│        │   wp.cantonfairindia.com  │
+│   cantonfairindia.in │        │   wp.cantonfairindia.in   │
 └─────────────────────┘         └──────────────────────────┘
 ```
 
