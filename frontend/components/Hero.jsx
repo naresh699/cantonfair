@@ -50,7 +50,10 @@ export default function Hero({ featuredTrip, heroData }) {
                     transition={{ delay: 0.8 }}
                     className="flex flex-col md:flex-row gap-4 justify-center"
                 >
-                    <Link href="/trips" className="bg-dragon-red text-white text-lg font-bold px-10 py-4 rounded-full hover:scale-105 transition-transform shadow-xl inline-block">
+                    <Link
+                        href="/itinerary"
+                        className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all cursor-pointer"
+                    >
                         View Itinerary
                     </Link>
                     <Link href="/guidance" className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all inline-block">
