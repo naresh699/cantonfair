@@ -23,11 +23,17 @@ export default function Footer({ menuItems = [], content = null }) {
                             ))
                         ) : (
                             <>
-                                <Link href="/terms-and-conditions" className="hover:text-dragon-red transition-colors">
+                                <Link href="/about-us" className="hover:text-dragon-red transition-colors cursor-pointer">
+                                    About Us
+                                </Link>
+                                <Link href="/terms-and-conditions" className="hover:text-dragon-red transition-colors cursor-pointer">
                                     Terms & Conditions
                                 </Link>
-                                <Link href="/privacy-policy" className="hover:text-dragon-red transition-colors">
+                                <Link href="/privacy-policy" className="hover:text-dragon-red transition-colors cursor-pointer">
                                     Privacy Policy
+                                </Link>
+                                <Link href="/cancellation-policy" className="hover:text-dragon-red transition-colors cursor-pointer">
+                                    Cancellation Policy
                                 </Link>
                             </>
                         )}
