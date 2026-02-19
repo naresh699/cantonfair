@@ -51,7 +51,7 @@ export default function Header({ variant = 'light', menuItems = [] }) {
 
                 {/* Mobile Menu Button - Improved Visibility */}
                 <button
-                    className="md:hidden text-dragon-blue z-50 relative bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white transition-all"
+                    className="md:hidden text-dragon-blue z-50 relative bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white transition-all cursor-pointer"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -63,20 +63,21 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                 </button>
 
                 {/* Mobile Menu Overlay - Adjusted Sizes */}
+                {/* Mobile Menu Overlay - Adjusted Sizes */}
                 <div className={`fixed inset-0 bg-white/98 backdrop-blur-xl z-40 transition-all duration-300 md:hidden flex flex-col items-center justify-center gap-6 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                     {displayMenu.map((item, index) => (
                         <Link
                             key={index}
                             href={item.uri || item.path}
-                            className="text-xl font-bold text-dragon-blue hover:text-dragon-red transition-colors"
+                            className="text-xl font-bold text-dragon-blue hover:text-dragon-red transition-colors block py-2"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             {item.label}
                         </Link>
                     ))}
                     <Link
-                        href="/trips"
-                        className="bg-dragon-red text-white text-lg font-bold px-8 py-3 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red mt-4"
+                        href="/canton-fair"
+                        className="bg-dragon-red text-white text-lg font-bold px-8 py-3 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red mt-4 cursor-pointer"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         Join Canton Fair

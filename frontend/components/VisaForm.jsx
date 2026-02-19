@@ -90,7 +90,7 @@ export default function VisaForm({
                         </a>
 
                         <div className="block">
-                            <button onClick={() => setStatus('idle')} className="mt-4 text-dragon-red font-bold hover:underline text-sm">
+                            <button onClick={() => setStatus('idle')} className="mt-4 text-dragon-red font-bold hover:underline text-sm cursor-pointer">
                                 Submit another application
                             </button>
                         </div>
@@ -183,7 +183,7 @@ export default function VisaForm({
 
                         <button
                             disabled={status === 'submitting'}
-                            className="w-full bg-dragon-red text-white py-4 rounded-xl font-bold hover:bg-dragon-blue transition-all disabled:opacity-50"
+                            className="w-full bg-dragon-red text-white py-4 rounded-xl font-bold hover:bg-dragon-blue transition-all disabled:opacity-50 cursor-pointer"
                         >
                             {status === 'submitting' ? 'Processing...' : 'Request Consultation'}
                         </button>

@@ -34,7 +34,7 @@ export default function FAQ({ faqs }) {
                         <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden">
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors cursor-pointer"
                             >
                                 <span className="text-lg font-bold text-dragon-blue">{item.question}</span>
                                 {activeIndex === index ? <Minus className="text-dragon-red" /> : <Plus className="text-dragon-red" />}

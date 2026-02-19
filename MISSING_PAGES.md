@@ -1,4 +1,4 @@
-# Missing Pages Content
+# Missing Pages Content (SEO Optimized)
 
 Copy the HTML below and paste it into the **Code Editor** (Text tab) of your WordPress pages.
 
@@ -9,30 +9,60 @@ Copy the HTML below and paste it into the **Code Editor** (Text tab) of your Wor
 **Slug:** `terms-and-conditions`
 
 ```html
-<div class="prose max-w-none">
-    <p>Last updated: February 2026</p>
+<div class="prose max-w-none text-gray-700">
+    <p class="text-sm text-gray-500 mb-8">Last updated: February 2026</p>
     
-    <h3>1. Introduction</h3>
-    <p>Welcome to Canton Fair India ("Company", "we", "our", "us"). These Terms and Conditions ("Terms", "Terms and Conditions") govern your use of our website located at cantonfairindia.in (together or individually "Service") operated by Canton Fair India.</p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px;">1. Introduction</h2>
+    <div style="height: 10px;"></div>
+    <p>Welcome to <strong>Canton Fair India</strong> ("Company", "we", "our", "us"). These Terms and Conditions govern your use of our website located at <a href="https://cantonfairindia.in" class="text-dragon-red hover:underline">cantonfairindia.in</a>. By accessing this service, you agree to be bound by these terms.</p>
 
-    <h3>2. Services</h3>
-    <p>We provide business tour packages, visa assistance, and consultation services for Indian entrepreneurs visiting the Canton Fair in Guangzhou, China.</p>
-
-    <h3>3. Booking & Payments</h3>
-    <ul>
-        <li>All bookings are subject to availability.</li>
-        <li>A non-refundable deposit may be required to secure your spot on a tour.</li>
-        <li>Full payment must be completed 15 days prior to the departure date.</li>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">2. Services Provided</h2>
+    <div style="height: 10px;"></div>
+    <p>We specialize in facilitating business travel and trade relations between India and China. Our core services include:</p>
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li><strong>Business Tour Packages:</strong> Comprehensive travel arrangements for the Canton Fair.</li>
+        <li><strong>Visa Assistance:</strong> Guidance and document handling for Business (M) visas.</li>
+        <li><strong>Trade Consultation:</strong> Expert advice on sourcing, logistics, and supplier verification.</li>
     </ul>
 
-    <h3>4. Cancellations & Refunds</h3>
-    <p>Cancellations made 30 days or more before departure are eligible for a 50% refund of the total trip cost (excluding visa fees). Cancellations made within less than 30 days are non-refundable.</p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">3. Booking & Payments</h2>
+    <div style="height: 10px;"></div>
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>All tour bookings are subject to availability and confirmation.</li>
+        <li>A <strong>non-refundable deposit</strong> is required to secure your reservation.</li>
+        <li>Full payment must be completed at least <strong>15 days prior</strong> to the scheduled departure.</li>
+    </ul>
 
-    <h3>5. Visa Services</h3>
-    <p>While we assist with visa applications, the final decision lies with the Chinese Embassy. We are not responsible for visa rejections or delays.</p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">4. Cancellation Policy</h2>
+    <div style="height: 10px;"></div>
+    <div class="overflow-x-auto">
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <thead>
+                <tr style="background-color: #f3f4f6;">
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left;">Time of Cancellation</th>
+                    <th style="padding: 12px; border: 1px solid #e5e7eb; text-align: left;">Refund Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #e5e7eb;">30+ Days before departure</td>
+                    <td style="padding: 12px; border: 1px solid #e5e7eb;">50% of Total Trip Cost</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #e5e7eb;">Less than 30 Days</td>
+                    <td style="padding: 12px; border: 1px solid #e5e7eb;">Non-Refundable (0%)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <h3>6. Contact Us</h3>
-    <p>If you have any questions about these Terms, please contact us at: <a href="mailto:support@cantonfairindia.in">support@cantonfairindia.in</a></p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">5. Visa Disclaimer</h2>
+    <div style="height: 10px;"></div>
+    <p>While we provide expert assistance, the <strong>final decision on visa issuance lies solely with the Embassy of the People's Republic of China</strong>. Canton Fair India is not liable for rejections, delays, or losses incurred due to visa denial.</p>
+
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">6. Contact Support</h2>
+    <div style="height: 10px;"></div>
+    <p>For legal inquiries, please contact us at: <a href="mailto:support@cantonfairindia.in" class="text-dragon-red font-bold">support@cantonfairindia.in</a></p>
 </div>
 ```
 
@@ -43,32 +73,42 @@ Copy the HTML below and paste it into the **Code Editor** (Text tab) of your Wor
 **Slug:** `privacy-policy`
 
 ```html
-<div class="prose max-w-none">
-    <p>Last updated: February 2026</p>
+<div class="prose max-w-none text-gray-700">
+    <p class="text-sm text-gray-500 mb-8">Last updated: February 2026</p>
 
-    <h3>1. Information Collection</h3>
-    <p>We collect information you provide directly to us, such as when you fill out a form, book a trip, or communicate with us. This includes:</p>
-    <ul>
-        <li>Name and Contact Information</li>
-        <li>Passport Details (for Visa processing)</li>
-        <li>Business Details (for trade fair registration)</li>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px;">1. Data Collection</h2>
+    <div style="height: 10px;"></div>
+    <p>We collect only the information necessary to provide our travel and trade services. This includes:</p>
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li><strong>Identity Data:</strong> Name, Passport Number, Date of Birth.</li>
+        <li><strong>Contact Data:</strong> Email address, Phone number (WhatsApp), Billing address.</li>
+        <li><strong>Business Data:</strong> Company name, Industry sector (for trade fair registration).</li>
     </ul>
 
-    <h3>2. Use of Information</h3>
-    <p>We use the information we collect to:</p>
-    <ul>
-        <li>Process your bookings and visa applications.</li>
-        <li>Send you important updates regarding your trip.</li>
-        <li>Improve our website and services.</li>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">2. How We Use Your Data</h2>
+    <div style="height: 10px;"></div>
+    <p>Your information is used strictly for:</p>
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li>Processing <strong>Chinese Business Visa</strong> applications.</li>
+        <li>Booking flights, hotels, and trade fair badges.</li>
+        <li>Sending critical trip updates and itinerary changes.</li>
     </ul>
 
-    <h3>3. Data Sharing</h3>
-    <p>We do not sell your personal data. We may share your data with third-party service providers (hotels, transport agencies, visa centers) strictly for the purpose of fulfilling your service request.</p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">3. Data Sharing & Security</h2>
+    <div style="height: 10px;"></div>
+    <p><strong>We do not sell your personal data.</strong> However, to fulfill our services, we must share specific data with:</p>
+    <ul class="list-disc pl-6 space-y-2 mb-6">
+        <li><strong>Consular Authorities:</strong> For visa processing.</li>
+        <li><strong>Service Providers:</strong> Airlines, Hotels, and Transport agencies in China.</li>
+    </ul>
+    <p>We employ industry-standard encryption to protect your data during transmission and storage.</p>
 
-    <h3>4. Security</h3>
-    <p>We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access.</p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">4. Your Rights</h2>
+    <div style="height: 10px;"></div>
+    <p>You have the right to request access to the personal data we hold about you, or to request its deletion (subject to legal record-keeping requirements).</p>
 
-    <h3>5. Contact Us</h3>
-    <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@cantonfairindia.in">support@cantonfairindia.in</a></p>
+    <h2 style="font-weight: 800; font-size: 2rem; color: #1a1a1a; margin-bottom: 10px; margin-top: 30px;">5. Contact Us</h2>
+    <div style="height: 10px;"></div>
+    <p>If you have questions about this Privacy Policy, please email: <a href="mailto:support@cantonfairindia.in" class="text-dragon-red font-bold">support@cantonfairindia.in</a></p>
 </div>
 ```
