@@ -41,8 +41,7 @@ export default async function VisaPage() {
                     </div>
 
                     {/* Right Column: Form (Larger - 66%) */}
-                    <div className="lg:col-span-8 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 sticky top-32 order-1 lg:order-2">
-                        <h2 className="text-2xl font-bold text-dragon-blue mb-6">{formTitle}</h2>
+                    <div className="lg:col-span-8 sticky top-32 order-1 lg:order-2">
                         <VisaForm />
                     </div>
                 </div>
