@@ -59,9 +59,11 @@ export default function SourcingGrid({ trips }) {
                                         ))}
                                 </ul>
 
-                                <button className="w-full border-2 border-dragon-blue text-dragon-blue py-3 rounded-xl font-bold hover:bg-dragon-blue hover:text-white transition-all">
-                                    View Details
-                                </button>
+                                <Link href={`/trip/${trip.slug}`} className="block w-full">
+                                    <button className="w-full border-2 border-dragon-blue text-dragon-blue py-3 rounded-xl font-bold hover:bg-dragon-blue hover:text-white transition-all cursor-pointer">
+                                        View Details
+                                    </button>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}

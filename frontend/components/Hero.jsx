@@ -56,7 +56,7 @@ export default function Hero({ featuredTrip, heroData }) {
                     >
                         View Itinerary
                     </Link>
-                    <Link href="/guidance" className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all inline-block">
+                    <Link href="/visa" className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all inline-block">
                         Get Consultation
                     </Link>
                 </motion.div>
