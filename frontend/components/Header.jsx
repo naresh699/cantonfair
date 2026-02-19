@@ -49,16 +49,16 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                     </Link>
                 </nav>
 
-                {/* Mobile Menu Button - Improved Visibility */}
+                {/* Mobile Menu Button - Premium UI */}
                 <button
-                    className="md:hidden text-dragon-blue z-50 relative bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white transition-all cursor-pointer"
+                    className="md:hidden text-dragon-blue z-50 relative bg-white/90 backdrop-blur-md w-12 h-12 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-all cursor-pointer border border-gray-100"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    <div className="w-6 h-5 flex flex-col justify-between">
-                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
-                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-                        <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                    <div className="w-5 h-4 flex flex-col justify-between">
+                        <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+                        <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                        <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
                     </div>
                 </button>
 
