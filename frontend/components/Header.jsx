@@ -44,7 +44,7 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                             {item.label}
                         </Link>
                     ))}
-                    <Link href="/trips" className="bg-dragon-red text-white px-6 py-2 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red">
+                    <Link href="/canton-fair" className="bg-dragon-red text-white px-6 py-2 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-lg border border-transparent hover:border-dragon-red">
                         Canton Fair
                     </Link>
                 </nav>

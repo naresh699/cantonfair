@@ -5,11 +5,22 @@ import Link from 'next/link';
 import { getTrips, getPosts, getHeroContent } from '@/lib/wordpress';
 
 export default async function Home() {
-  const [trips, posts, heroData] = await Promise.all([
+  const [tripsData, posts, heroData] = await Promise.all([
     getTrips(),
     getPosts(),
     getHeroContent()
   ]);
+
+  // Deduplicate trips by slug - prioritize those with images
+  const tripsMap = {};
+  tripsData.forEach(trip => {
+    const slug = trip.slug;
+    // If we haven't seen this slug OR the current one has no image but the new one does, keep the new one
+    if (!tripsMap[slug] || (!tripsMap[slug].tripFields?.image && trip.tripFields?.image)) {
+      tripsMap[slug] = trip;
+    }
+  });
+  const trips = Object.values(tripsMap);
   const featuredTrip = trips?.[0];
 
   return (
