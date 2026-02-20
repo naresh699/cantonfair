@@ -31,8 +31,12 @@ export default function Header({ variant = 'light', menuItems = [] }) {
     return (
         <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 py-4">
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link href="/" className={`text-2xl font-bold transition-colors flex items-center gap-2 ${textColor}`}>
-                    Canton Fair <span className="text-dragon-red">India</span>
+                <Link href="/" className="flex items-center group">
+                    <img
+                        src="/logo.png"
+                        alt="Canton Fair India Logo"
+                        className="h-10 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+                    />
                 </Link>
                 <nav className={`hidden md:flex items-center gap-8 font-medium transition-colors ${textColor}`}>
                     {displayMenu.map((item, index) => (
