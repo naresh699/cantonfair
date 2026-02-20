@@ -1,5 +1,5 @@
-"use client";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function SourcingGrid({ trips }) {
     if (!trips || trips.length === 0) {
@@ -59,7 +59,7 @@ export default function SourcingGrid({ trips }) {
                                         ))}
                                 </ul>
 
-                                <Link href={`/trip/${trip.slug}`} className="block w-full">
+                                <Link href={`/trips/${trip.slug}`} className="block w-full">
                                     <button className="w-full border-2 border-dragon-blue text-dragon-blue py-3 rounded-xl font-bold hover:bg-dragon-blue hover:text-white transition-all cursor-pointer">
                                         View Details
                                     </button>
