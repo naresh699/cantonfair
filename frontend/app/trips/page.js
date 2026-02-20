@@ -1,7 +1,7 @@
 import Header from '@/components/DynamicHeader';
 import SourcingGrid from '@/components/SourcingGrid';
 import ChinaMarketTable from '@/components/ChinaMarketTable';
-import { getTrips } from '@/lib/wordpress';
+import { getTrips, getPageBySlug } from '@/lib/wordpress';
 
 export default async function TripsPage() {
     let trips = [];
