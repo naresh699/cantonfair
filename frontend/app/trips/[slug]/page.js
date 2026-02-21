@@ -2,6 +2,7 @@ import Header from '@/components/DynamicHeader';
 import { getTripBySlug } from '@/lib/wordpress';
 import { Plane, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { getSecureUrl } from '@/lib/utils';
 
 export default async function TripPage({ params }) {
     const { slug } = params;
@@ -27,28 +28,32 @@ export default async function TripPage({ params }) {
             <Header />
 
             {/* Hero Section */}
-            <div className="relative h-[60vh] min-h-[400px] flex items-center pt-32">
+            <div className="relative h-[70vh] min-h-[500px] flex items-center pt-32 overflow-hidden bg-dragon-blue">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src={trip.tripFields?.image || 'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2070&auto=format&fit=crop'}
+                        src={getSecureUrl(trip.tripFields?.image || trip.featuredImage?.node?.sourceUrl || 'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2070&auto=format&fit=crop')}
                         alt={trip.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dragon-blue via-dragon-blue/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-dragon-blue via-dragon-blue/60 to-dragon-blue/20"></div>
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="max-w-3xl">
-                        <div className="inline-flex items-center gap-2 bg-dragon-red text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6 shadow-lg">
+                <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
+                    <div className="max-w-4xl">
+                        <motion.div
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            className="inline-flex items-center gap-2 bg-dragon-red text-white px-5 py-2 rounded-full text-xs font-black mb-8 shadow-2xl uppercase tracking-[0.2em]"
+                        >
                             <MapPin className="w-4 h-4" />
-                            {trip.tripFields?.city || 'China'}
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                            {trip.tripFields?.city || 'China'} TRIP
+                        </motion.div>
+                        <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[0.9] uppercase tracking-tighter italic">
                             {trip.title}
                         </h1>
-                        <div className="flex items-center gap-6 text-white/90 text-xl font-medium">
-                            <span className="flex items-center gap-2">
-                                <span className="text-dragon-red">Price:</span> {trip.tripFields?.price || 'Enquire'}
+                        <div className="flex flex-wrap items-center gap-8 text-white/90 text-xl font-bold uppercase tracking-widest italic pt-4 border-t border-white/20">
+                            <span className="flex items-center gap-3">
+                                <span className="text-dragon-red">STARTING FROM:</span> {trip.tripFields?.price || 'Enquire for Price'}
                             </span>
                         </div>
                     </div>
@@ -102,9 +107,9 @@ export default async function TripPage({ params }) {
                                 </div>
                             </div>
 
-                            <Link href="/visa">
-                                <button className="w-full bg-dragon-red hover:bg-red-600 text-white py-4 rounded-xl font-bold transition-all shadow-xl group flex items-center justify-center gap-3">
-                                    Reserve Your Spot <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <Link href="/enquiry">
+                                <button className="w-full bg-dragon-red hover:bg-red-600 text-white py-4 rounded-xl font-black uppercase tracking-widest transition-all shadow-xl group flex items-center justify-center gap-3 cursor-pointer">
+                                    Enquire Now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </Link>
 

@@ -1,4 +1,6 @@
-const API_URL = process.env.WORDPRESS_API_URL;
+import { getSecureUrl } from './utils';
+
+const API_URL = getSecureUrl(process.env.WORDPRESS_API_URL);
 
 async function fetchAPI(query, { variables, revalidate = 60 } = {}) {
   const headers = { 'Content-Type': 'application/json' };
