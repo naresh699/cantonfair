@@ -31,11 +31,16 @@ export async function getTrips() {
   try {
     const data = await fetchAPI(`
       query AllTrips {
-        trips {
+        trips(first: 100) {
           nodes {
             id
             title
             slug
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
             tripFields {
               price
               city
@@ -60,6 +65,11 @@ export async function getTripBySlug(slug) {
         id
         title
         content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
         tripFields {
           price
           city

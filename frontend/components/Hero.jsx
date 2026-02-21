@@ -5,41 +5,53 @@ import Link from 'next/link';
 export default function Hero({ featuredTrip, heroData }) {
     const displayHeading = heroData?.heroHeading || featuredTrip?.title || "China Business Excellence";
     const displayTagline = heroData?.heroTagline?.replace(/<[^>]*>?/gm, '') || "Experience the world's largest trade fair with Canton Fair India's exclusive executive tours.";
+    const heroImage = featuredTrip?.tripFields?.image || featuredTrip?.featuredImage?.node?.sourceUrl || "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop";
 
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-dragon-blue">
             {/* Parallax Background */}
             <motion.div
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-                className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                initial={{ scale: 1.15, opacity: 0 }}
+                animate={{ scale: 1, opacity: 0.5 }}
+                transition={{ duration: 2, ease: "easeOut" }}
+                className="absolute inset-0 bg-cover bg-center z-0"
+                style={{ backgroundImage: `url('${heroImage}')` }}
             />
 
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-dragon-blue/80 via-dragon-blue/60 to-dragon-blue z-1" />
+
             <div className="relative z-10 container mx-auto px-6 text-center text-white">
-                <motion.span
+                <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="bg-dragon-red text-white px-4 py-1 rounded-full text-sm font-semibold mb-6 inline-block uppercase tracking-widest"
+                    className="flex flex-col items-center mb-8"
                 >
-                    Featured Experience
-                </motion.span>
+                    <span className="bg-dragon-red text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-4 shadow-2xl">
+                        Official 2026 Batch
+                    </span>
+                    <div className="w-12 h-1 bg-dragon-red rounded-full" />
+                </motion.div>
 
                 <motion.h1
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                    className="text-5xl md:text-8xl font-black mb-8 leading-[0.95] uppercase tracking-tighter italic"
                 >
-                    {displayHeading}
+                    {displayHeading.split(' ').map((word, i) => (
+                        <span key={i} className={i % 2 === 0 ? "text-white" : "text-dragon-red block md:inline"}>
+                            {word}{' '}
+                        </span>
+                    ))}
                 </motion.h1>
 
                 <motion.p
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10"
+                    className="text-lg md:text-2xl text-blue-100 max-w-3xl mx-auto mb-12 font-medium leading-relaxed"
                 >
                     {displayTagline}
                 </motion.p>
@@ -48,22 +60,38 @@ export default function Hero({ featuredTrip, heroData }) {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.8 }}
-                    className="flex flex-col md:flex-row gap-4 justify-center"
+                    className="flex flex-col sm:flex-row gap-6 justify-center items-center"
                 >
-                    <Link
-                        href="/itinerary"
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all cursor-pointer"
-                    >
-                        View Itinerary
+                    <Link href="/enquiry" className="group bg-dragon-red text-white text-lg font-black px-12 py-5 rounded-xl hover:bg-white hover:text-dragon-red transition-all shadow-[0_20px_50px_rgba(222,41,16,0.3)] uppercase tracking-widest flex items-center gap-3">
+                        Enquire Now
+                        <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
                     </Link>
-                    <Link href="/visa" className="bg-white/10 backdrop-blur-md text-white border border-white/20 text-lg font-bold px-10 py-4 rounded-full hover:bg-white hover:text-dragon-blue transition-all inline-block">
-                        Get Consultation
+                    <Link
+                        href="/visa"
+                        className="text-white border-b-2 border-white/30 hover:border-dragon-red px-4 py-2 font-black uppercase tracking-widest transition-all text-sm"
+                    >
+                        Apply for Visa
                     </Link>
                 </motion.div>
             </div>
 
-            {/* Decorative Gradient */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-dragon-blue to-transparent" />
+            {/* Floating Stats */}
+            <div className="absolute bottom-12 left-0 w-full hidden lg:block z-10 px-6">
+                <div className="container mx-auto flex justify-between items-end border-l-4 border-dragon-red pl-8">
+                    <div className="space-y-1">
+                        <div className="text-4xl font-black text-white italic">15+</div>
+                        <div className="text-xs font-black text-dragon-red uppercase tracking-widest">Years Experience</div>
+                    </div>
+                    <div className="space-y-1">
+                        <div className="text-4xl font-black text-white italic">5000+</div>
+                        <div className="text-xs font-black text-dragon-red uppercase tracking-widest">Entrepreneurs Guided</div>
+                    </div>
+                    <div className="space-y-1">
+                        <div className="text-4xl font-black text-white italic">100%</div>
+                        <div className="text-xs font-black text-dragon-red uppercase tracking-widest">Visa Success Rate</div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

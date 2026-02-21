@@ -15,8 +15,12 @@ export default async function Home() {
   const tripsMap = {};
   tripsData.forEach(trip => {
     const slug = trip.slug;
+    const hasImage = trip.tripFields?.image || trip.featuredImage?.node?.sourceUrl;
+
     // If we haven't seen this slug OR the current one has no image but the new one does, keep the new one
-    if (!tripsMap[slug] || (!tripsMap[slug].tripFields?.image && trip.tripFields?.image)) {
+    const currentHasImage = tripsMap[slug] && (tripsMap[slug].tripFields?.image || tripsMap[slug].featuredImage?.node?.sourceUrl);
+
+    if (!tripsMap[slug] || (!currentHasImage && hasImage)) {
       tripsMap[slug] = trip;
     }
   });
