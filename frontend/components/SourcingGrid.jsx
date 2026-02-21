@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { getSecureUrl } from '@/lib/utils';
 
 export default function SourcingGrid({ trips }) {
     if (!trips || trips.length === 0) {
@@ -23,9 +24,11 @@ export default function SourcingGrid({ trips }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {trips.map((trip, index) => {
-                        const tripImage = trip.tripFields?.image ||
+                        const tripImage = getSecureUrl(
+                            trip.tripFields?.image ||
                             trip.featuredImage?.node?.sourceUrl ||
-                            'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2070&auto=format&fit=crop';
+                            'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2070&auto=format&fit=crop'
+                        );
 
                         return (
                             <motion.div

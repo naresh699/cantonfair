@@ -1,11 +1,12 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { getSecureUrl } from '@/lib/utils';
 
 export default function Hero({ featuredTrip, heroData }) {
     const displayHeading = heroData?.heroHeading || featuredTrip?.title || "China Business Excellence";
     const displayTagline = heroData?.heroTagline?.replace(/<[^>]*>?/gm, '') || "Experience the world's largest trade fair with Canton Fair India's exclusive executive tours.";
-    const heroImage = featuredTrip?.tripFields?.image || featuredTrip?.featuredImage?.node?.sourceUrl || "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop";
+    const heroImage = getSecureUrl(featuredTrip?.tripFields?.image || featuredTrip?.featuredImage?.node?.sourceUrl || "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop");
 
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-dragon-blue">

@@ -69,34 +69,47 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                 {/* Mobile Menu Overlay */}
                 <AnimatePresence>
                     {isMobileMenuOpen && (
-                        <motion.div 
-                            initial={{ opacity: 0, x: '100%' }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed inset-0 bg-dragon-blue/95 backdrop-blur-2xl z-40 md:hidden flex flex-col items-center justify-center gap-8"
+                        <motion.div
+                            initial={{ opacity: 0, y: '-100%' }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: '-100%' }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            className="fixed inset-0 bg-white z-[60] md:hidden flex flex-col items-center justify-center gap-8 shadow-2xl"
                         >
+                            {/* Close Button Inside Menu */}
+                            <button
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="absolute top-8 right-8 w-12 h-12 bg-dragon-blue text-white rounded-full flex items-center justify-center shadow-lg"
+                            >
+                                <div className="w-6 h-6 relative">
+                                    <span className="absolute top-1/2 left-0 w-full h-1 bg-white rounded-full rotate-45" />
+                                    <span className="absolute top-1/2 left-0 w-full h-1 bg-white rounded-full -rotate-45" />
+                                </div>
+                            </button>
+
                             <div className="absolute top-8 left-8">
-                                <img src="/logo.png" alt="Logo" className="h-12 w-auto brightness-0 invert" />
+                                <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
                             </div>
-                            
-                            {displayMenu.map((item, index) => (
+
+                            <div className="flex flex-col items-center gap-8">
+                                {displayMenu.map((item, index) => (
+                                    <Link
+                                        key={index}
+                                        href={item.uri || item.path}
+                                        className="text-3xl font-black text-dragon-blue hover:text-dragon-red transition-colors block py-2 uppercase tracking-widest"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
                                 <Link
-                                    key={index}
-                                    href={item.uri || item.path}
-                                    className="text-2xl font-black text-white hover:text-dragon-red transition-colors block py-2 uppercase tracking-widest"
+                                    href="/enquiry"
+                                    className="bg-dragon-red text-white text-xl font-black px-12 py-4 rounded-full hover:bg-dragon-blue transition-all shadow-2xl mt-4 uppercase tracking-widest"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    {item.label}
+                                    Enquire Now
                                 </Link>
-                            ))}
-                            <Link
-                                href="/enquiry"
-                                className="bg-dragon-red text-white text-xl font-black px-12 py-4 rounded-full hover:bg-white hover:text-dragon-red transition-all shadow-2xl mt-4 uppercase tracking-widest"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Enquire Now
-                            </Link>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
