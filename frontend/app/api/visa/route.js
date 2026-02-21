@@ -14,6 +14,11 @@ export async function POST(request) {
             ? process.env.WORDPRESS_API_URL.replace('/graphql', '/wp-json/cfi/v1/submit-lead')
             : 'http://cantonfairindiacom.local/wp-json/cfi/v1/submit-lead';
 
+        if (!wpUrl || wpUrl.includes('undefined')) {
+            console.error('Invalid WordPress API URL for lead submission:', wpUrl);
+            return NextResponse.json({ success: false, message: 'Server configuration error.' }, { status: 500 });
+        }
+
         const res = await fetch(wpUrl, {
             method: 'POST',
             headers: {

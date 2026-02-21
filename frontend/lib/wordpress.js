@@ -1,32 +1,46 @@
 import { getSecureUrl } from './utils';
 
-const API_URL = getSecureUrl(process.env.WORDPRESS_API_URL);
+// Guard against undefined URL to prevent "POST /undefined" errors
+const RAW_URL = process.env.WORDPRESS_API_URL || '';
+const API_URL = RAW_URL ? getSecureUrl(RAW_URL) : '';
 
 async function fetchAPI(query, { variables, revalidate = 60 } = {}) {
+  if (!API_URL) {
+    console.error('WORDPRESS_API_URL is not defined. Please check your environment variables.');
+    return null;
+  }
+
   const headers = { 'Content-Type': 'application/json' };
 
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-    next: { revalidate },
-  });
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+      next: { revalidate },
+    });
 
-  if (!res.ok) {
-    console.error(`fetchAPI failed: ${res.status} ${res.statusText} for ${API_URL}`);
-    const text = await res.text();
-    console.error('Response body:', text);
+    if (!res.ok) {
+      const errorText = await res.text().catch(() => 'No error body');
+      console.error(`fetchAPI failed: ${res.status} ${res.statusText} for ${API_URL}`);
+      console.error('Error body:', errorText);
+      return null;
+    }
+
+    const json = await res.json();
+    if (json.errors) {
+      console.error('GraphQL Errors:', json.errors);
+      return null;
+    }
+
+    return json.data;
+  } catch (err) {
+    console.error('fetchAPI connection error:', err);
     return null;
   }
-  const json = await res.json();
-  if (json.errors) {
-    console.error('GraphQL Errors:', json.errors);
-    return null;
-  }
-  return json.data;
 }
 
 export async function getTrips() {

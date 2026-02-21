@@ -42,7 +42,7 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                     {displayMenu.map((item, index) => (
                         <Link
                             key={index}
-                            href={item.uri || item.path}
+                            href={item.uri || item.path || '#'}
                             className="hover:text-dragon-red transition-colors uppercase text-sm tracking-wider"
                         >
                             {item.label}
@@ -95,7 +95,7 @@ export default function Header({ variant = 'light', menuItems = [] }) {
                                 {displayMenu.map((item, index) => (
                                     <Link
                                         key={index}
-                                        href={item.uri || item.path}
+                                        href={item.uri || item.path || '#'}
                                         className="text-3xl font-black text-dragon-blue hover:text-dragon-red transition-colors block py-2 uppercase tracking-widest"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
